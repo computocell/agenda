@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<!-- Mobile viewport optimized -->
+<meta name="viewport" content="width=device-width">
+<head>
+    <title>Adciona Contatos</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <link href="vendor/bootstrap/css/bootstrap-theme.min.css" type="text/css" rel="stylesheet"/>
+    <link href="vendor/bootstrap/css/bootstrap-responsive.css" type="text/css" rel="stylesheet"/>
+    <link href="vendor/datepicker/css/bootstrap-datepicker.min.css" type="text/css" rel="stylesheet"/>
+
+
+</head>
+<body>
+<h1>Java Web - Treinamento</h1>
+<hr/>
+
+<div class="row-fluid">
+    <div class="col-md-12">
+
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <form action="adicionaContato" method="post" class="form-horizontal">
+
+                <fieldset>
+                    <legend>Adiciona Contatos</legend>
+                    <div class="control-group">
+                        <label class="control-label" for="nome">Nome</label>
+
+                        <div class="controls">
+                            <input type="text" name="nome" id="nome" placeholder="Nome..."/>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="email">Email</label>
+
+                        <div class="controls">
+                            <input type="text" name="email" id="email" placeholder="Email"/>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="endereco">Endereço</label>
+
+                        <div class="controls">
+                            <input type="text" name="endereco" id="endereco" placeholder="Endereço"/>
+                        </div>
+                    </div>
+
+                    <div class="control-groups">
+                        <label for="dataNascimento">Data Nascimento</label>
+
+                        <div class="controls">
+                            <input type="text" name="dataNascimento" id="dataNascimento"
+                                   placeholder="Data de Nascimento" class="datepicker"/>
+                        </div>
+                    </div>
+                    <div class="control-groups">
+                        <label for="dataNascimento">Data Nascimento</label>
+
+                        <div class="controls">
+                            <input type="submit" value="Gravar"/>
+                        </div>
+                    </div>
+
+
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+<script src="vendor/bootstrap/js/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendor/datepicker/js/bootstrap-datepicker.min.js"></script>
+<script src="vendor/datepicker/locales/bootstrap-datepicker.pt-BR.min.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        var options = new Array();
+
+        options['language'] = 'pt-BR';
+        options['format'] = 'dd/mm/yyyy';
+        options['autoclose'] = 'true';
+
+        $('.datepicker').datepicker(options);
+    })
+</script>
+</body>
+</html>

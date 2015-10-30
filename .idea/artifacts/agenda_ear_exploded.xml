@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="agenda:ear exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/agenda_ear_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="agenda/javaeeApplication/javaEEApplication" />
+      <element id="directory" name="META-INF">
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/lib/EaSynthLookAndFeel.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/lib/liquid.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/lib/mysql-connector-java-5.1.21-bin.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
