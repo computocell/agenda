@@ -2,6 +2,7 @@
 <%@ page import="br.com.caelum.jdbc.modelo.Contato" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.List" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: Jefferson
@@ -26,8 +27,6 @@
     <link href="vendor/bootstrap/css/custom/navbar-fixed-top.css" rel="stylesheet">
 </head>
 <body>
-
-
 <!-- Fixed navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -39,7 +38,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/agenda">Aula Caelum</a>
+            <a class="navbar-brand" href="#">Aula Caelum</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -52,6 +51,7 @@
                        aria-expanded="false">Scriplets <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="/agenda/lista-contatos-scriptlet.jsp">Listar Contatos</a></li>
+                        <li><a href="/agenda/lista-contatos-scriptlet-jstl.jsp">Listar Contatos - JSTL</a></li>
                         <li><a href="/agenda/digita-idade.jsp">Digita Idade</a></li>
                         <li><a href="#">Something else here</a></li>
                         <li role="separator" class="divider"></li>
@@ -108,18 +108,14 @@
                     }
                 %>
                 class="<%=classe%>"
-
-                <%%>  >
-            <td><%=contato.getNome() %>
-            </td>
+>
+                <%SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");%>
+            <td><%=contato.getNome() %></td>
             <td><%=contato.getEmail()%>
             </td>
             <td><%=contato.getEndereco()%>
             </td>
-            <td><%=contato.getDataNascimento().getTime()%>
-            </td>
-            <td><%
-                String dataFormatada = new SimpleDateFormat("dd/mm/yyyy").format(contato.getDataNascimento().getTime());%></td>
+            <td><%=formataData.format(contato.getDataNascimento().getTime())%></td>
 
         </tr>
 
@@ -131,5 +127,10 @@
     </table>
 
 </div>
+<!-- Fim Container -->
+
+<!-- Chama JS -->
+<script src="vendor/bootstrap/js/jquery.min.js" type="text/javascript"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 </body>
 </html>

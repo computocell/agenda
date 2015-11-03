@@ -2,6 +2,12 @@
   <library name="lib">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/META-INF/lib/mysql-connector-java-5.1.21-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/META-INF/lib/jstl-api-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/META-INF/lib/EaSynthLookAndFeel.jar!/" />
+      <root url="jar://$PROJECT_DIR$/META-INF/lib/liquid.jar!/" />
+      <root url="jar://$PROJECT_DIR$/META-INF/lib/jsp-api-2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/META-INF/lib/servlet-api-2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/META-INF/lib/jstl-impl-1.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

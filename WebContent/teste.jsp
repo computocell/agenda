@@ -20,23 +20,22 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Listagem de usuarios</title>
+    <title>TEste</title>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="vendor/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="vendor/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="vendor/bootstrap/css/custom/navbar-fixed-top.css" rel="stylesheet">
     <link href="vendor/bootstrap/css/custom/table_base.css" rel="stylesheet">
-    <link href="vendor/bootstrap/css/custom/dataTables.bootstrap.min.css" rel="stylesheet">
+
 
 </head>
 <body>
 <c:import url="template/menu.jsp"/>
 
 <div class="container">
-    <div class="row">
     <div class="col-md-12">
-        <div class="table-responsive">
-            <table border="1" class="table table-striped table-bordered" id="dados">
+
+        <table border="1" class="table table-striped table-bordered" id="example" cellspacing="0" width="100%">
             <thead>
             <tr>
                 <th>#</th>
@@ -52,7 +51,7 @@
                 int i = 0;
                 String classe = "warning";
             %>
-                <tbody id="dados_contatos">
+            <tbody>
             <c:forEach var="contato" items="${dao.lista}" varStatus="id" step="1">
 
                 <tr
@@ -86,37 +85,38 @@
             </tbody>
         </table>
 
-            <div class="col-md-12 text-center">
-                <ul class="pagination pagination-lg pager" id="paginador"></ul>
-            </div>
-
-        </div>
-
     </div>
-    </div>
+
+
+    <section id="paginacao">
+        <nav>
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+
 </div>
-<script src="vendor/bootstrap/js/jquery.min.js" type="text/javascript"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
 
 <!-- Fim Container -->
-<script src="vendor/bootstrap/js/custom/tabela_com_paginacao.js"></script>
-<script type='text/javascript'>
-
-    $(document).ready(function () {
-
-        $('#dados_contatos').pageMe({
-            pagerSelector: '#paginador',
-            showPrevNext: true,
-            hidePageNumbers: false,
-            perPage: 7
-        });
-
-    });
-
-</script>
-
-<%--
-<:import url="template/rodape.jsp"/>--%>
+<hr/>
 <!-- Chama JS -->
+<script src="vendor/bootstrap/js/jquery.min.js" type="text/javascript"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 </body>
 </html>

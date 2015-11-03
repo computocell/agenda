@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module classpath="eclipse" classpath-dir="$MODULE_DIR$" type="JAVA_MODULE" version="4">
+<module classpath="eclipse" classpath-dir="$MODULE_DIR$" org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="javaeeApplication" name="javaEEApplication">
       <configuration>
@@ -16,6 +16,9 @@
         <webroots>
           <root url="file://$MODULE_DIR$/WebContent" relative="/" />
         </webroots>
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/src" />
+        </sourceRoots>
       </configuration>
     </facet>
   </component>
