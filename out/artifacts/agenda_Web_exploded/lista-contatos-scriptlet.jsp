@@ -108,14 +108,16 @@
                     }
                 %>
                 class="<%=classe%>"
->
-                <%SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");%>
-            <td><%=contato.getNome() %></td>
+                >
+            <%SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");%>
+            <td><%=contato.getNome() %>
+            </td>
             <td><%=contato.getEmail()%>
             </td>
             <td><%=contato.getEndereco()%>
             </td>
-            <td><%=formataData.format(contato.getDataNascimento().getTime())%></td>
+            <td><%=formataData.format(contato.getDataNascimento().getTime())%>
+            </td>
 
         </tr>
 

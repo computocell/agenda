@@ -15,7 +15,7 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/agenda">Pagina Inicial</a></li>
-                <li><a href="/agenda/adiciona-contato.html">( + ) Contato</a></li>
+                <li><a href="/agenda/adiciona-contato.jsp">( + ) Contato</a></li>
                 <li><a href="/agenda/MinhaServlet">MinhaServlet</a></li>
                 <li><a href="/agenda/bemvindo.jsp">Bem Vindo</a></li>
                 <li class="dropdown">

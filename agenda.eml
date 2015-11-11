@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component LANGUAGE_LEVEL="JDK_1_5" inheritJdk="true">
+<component inheritJdk="true">
 	<output-test url="file://$MODULE_DIR$/target/test-classes"/>
 	<contentEntry url="file://$MODULE_DIR$">
 		<testFolder url="file://$MODULE_DIR$/src/test/java"/>
 		<excludeFolder url="file://$MODULE_DIR$/target"/>
 	</contentEntry>
-	<lib name="Tomcat 7.0.56" scope="PROVIDED"/>
 	<levels>
 		<level name="Tomcat 7.0.56" value="application_server_libraries"/>
 		<level name="libs" value="project"/>
 		<level name="lib" value="project"/>
+		<level name="Java EE 6-Java EE 6" value="project"/>
 	</levels>
 </component>

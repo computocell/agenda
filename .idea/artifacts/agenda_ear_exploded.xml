@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-ear" name="agenda:ear exploded">
+  <artifact type="exploded-ear" build-on-make="true" name="agenda:ear exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/agenda_ear_exploded</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="agenda/javaeeApplication/javaEEApplication" />

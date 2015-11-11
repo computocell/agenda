@@ -1,6 +1,6 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:useBean id="dao" class="br.com.caelum.jdbc.dao.ContatoDao"/>
 <jsp:useBean id="contato" class="br.com.caelum.jdbc.modelo.Contato"/>
 <%--
@@ -45,51 +45,45 @@
                 <th>Endereço</th>
                 <th>Data Nascimento</th>
             </tr>
-            </thead>
+            <tr id="busca_por_parametro">
+                <th><input type="search" id="busca_porID" size="3"></th>
+                <th><input type="search" id="busca_porNome"></th>
+                <th><input type="search" id="busca_porEmail"></th>
+                <th><input type="search" id="busca_porEnd"></th>
+                <th><input type="search" id="busca_porIdade"></th>
 
-            <%
-                SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
-                int i = 0;
-                String classe = "warning";
-            %>
+            </tr>
+            </thead>
+                <%
+                    SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
+                    int i = 0;
+                    String classe = "warning";
+                %>
                 <tbody id="dados_contatos">
             <c:forEach var="contato" items="${dao.lista}" varStatus="id" step="1">
-
-                <tr
-                        <%
-                            if (i % 2 == 0) {
-                                classe = "danger";
-                            } else {
-                                classe = "warning";
-                            }
-                        %>
-                        class="<%=classe%>"
-                        >
-
+                <%if (i >= 0) {%>
+                <tr <%if (i % 2 == 0) {classe = "danger";} else {classe = "warning";}%>class="<%=classe%>">
                     <td>${id.count}</td>
                     <td>${contato.nome}</td>
-                    <td>
-                        <c:choose>
-                            <c:when test="${not empty contato.email}">
-                                <a href="mailto:${contato.email}">${contato.email}</a>"
-                            </c:when>
-                            <c:otherwise>
-                                Email Não Informado
-                            </c:otherwise>
-                        </c:choose>
-                    </td>
+                    <td><c:choose><c:when test="${not empty contato.email}"><a
+                            href="mailto:${contato.email}">${contato.email}</a>"</c:when>
+                        <c:otherwise>Email Não Informado</c:otherwise></c:choose></td>
                     <td>${contato.endereco}</td>
                     <td><fmt:formatDate value="${contato.dataNascimento.time}" pattern="dd/MM/yyyy"/></td>
                 </tr>
                 <% i++;%>
+                <%
+                    }
+
+                %>
             </c:forEach>
             </tbody>
         </table>
 
-            <div class="col-md-12 text-center">
-                <ul class="pagination pagination-lg pager" id="paginador"></ul>
-            </div>
 
+        </div>
+        <div class="col-md-12 text-center">
+            <ul class="pagination pagination-lg pager" id="paginador"></ul>
         </div>
 
     </div>
@@ -111,6 +105,24 @@
             perPage: 7
         });
 
+
+    });
+    $(function () {
+        $("#dados input").keyup(function () {
+            var index = $(this).parent().index();
+            var nth = "#dados td:nth-child(" + (index + 1).toString() + ")";
+            var valor = $(this).val().toUpperCase();
+            $("#dados tbody tr").show();
+            $(nth).each(function () {
+                if ($(this).text().toUpperCase().indexOf(valor) < 0) {
+                    $(this).parent().hide();
+                }
+            });
+        });
+
+        $("#dados input").blur(function () {
+            $(this).val("");
+        });
     });
 
 </script>
